@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'planet_details_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,7 +10,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Platform.isIOS
-        ? CupertinoApp(title: 'Aya', home: MyHomePage())
+        ? CupertinoApp(
+            title: 'Aya',
+            home: MyHomePage(),
+          )
         : MaterialApp(
             title: 'Aya',
             theme: ThemeData(
@@ -29,6 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(255, 247, 226, 1),
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -92,50 +97,110 @@ class _MyHomePageState extends State<MyHomePage> {
                       Padding(
                         padding: EdgeInsets.only(left: 25),
                       ),
-                      planetCard('sun'),
+                      planetCard(
+                          'sun',
+                          Color.fromRGBO(239, 178, 92, 1),
+                          Color.fromRGBO(229, 107, 20, 1),
+                          'Solid',
+                          '1,391,000 km',
+                          'The Sun is the star at the center of the Solar System. It is a nearly perfect sphere of hot plasma.'),
                       Padding(
                         padding: EdgeInsets.only(left: 10),
                       ),
-                      planetCard('mercury'),
+                      planetCard(
+                          'mercury',
+                          Color.fromRGBO(223, 181, 147, 1),
+                          Color.fromRGBO(184, 117, 79, 1),
+                          'Solid',
+                          '4,879 km',
+                          'Mercury is the smallest and innermost planet in the Solar System. Its orbital period around the Sun of 87.97 days is the shortest of all the planets in the Solar System.'),
                       Padding(
                         padding: EdgeInsets.only(left: 10),
                       ),
-                      planetCard('venus'),
+                      planetCard(
+                          'venus',
+                          Color.fromRGBO(233, 202, 115, 1),
+                          Color.fromRGBO(180, 101, 39, 1),
+                          'Solid',
+                          '12,104 km',
+                          'Venus is the second planet from the Sun, orbiting it every 224.7 Earth days.'),
                       Padding(
                         padding: EdgeInsets.only(left: 10),
                       ),
-                      planetCard('earth'),
+                      planetCard(
+                          'earth',
+                          Color.fromRGBO(0, 209, 230, 1),
+                          Color.fromRGBO(0, 129, 186, 1),
+                          'Solid',
+                          '12,742 km',
+                          'Earth is the third planet from the Sun and the fifth largest. Earth is the only planet whose English name does not derive from Greek/Roman mythology.'),
                       Padding(
                         padding: EdgeInsets.only(left: 10),
                       ),
-                      planetCard('moon'),
+                      planetCard(
+                          'moon',
+                          Color.fromRGBO(220, 217, 225, 1),
+                          Color.fromRGBO(79, 86, 92, 1),
+                          'Solid',
+                          '3,474 km',
+                          "Earth's Moon is an astronomical body that orbits the planet and acts as its only permanent natural satellite."),
                       Padding(
                         padding: EdgeInsets.only(left: 10),
                       ),
-                      planetCard('mars'),
+                      planetCard(
+                          'mars',
+                          Color.fromRGBO(251, 98, 82, 1),
+                          Color.fromRGBO(159, 0, 0, 1),
+                          'Solid',
+                          '6,779 km',
+                          'Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury.'),
                       Padding(
                         padding: EdgeInsets.only(left: 10),
                       ),
-                      planetCard('jupiter'),
+                      planetCard(
+                          'jupiter',
+                          Color.fromRGBO(233, 153, 69, 1),
+                          Color.fromRGBO(218, 81, 7, 1),
+                          'Gas',
+                          '139,830 km',
+                          'Jupiter is the fifth planet from the Sun and the largest in the Solar System.'),
                       Padding(
                         padding: EdgeInsets.only(left: 10),
                       ),
-                      planetCard('saturn'),
+                      planetCard(
+                          'saturn',
+                          Color.fromRGBO(199, 109, 104, 1),
+                          Color.fromRGBO(155, 63, 60, 1),
+                          'Solid',
+                          '116,460 km',
+                          'Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter.'),
                       Padding(
                         padding: EdgeInsets.only(left: 10),
                       ),
-                      planetCard('uranus'),
+                      planetCard(
+                          'uranus',
+                          Color.fromRGBO(28, 178, 240, 1),
+                          Color.fromRGBO(20, 71, 158, 1),
+                          'Solid',
+                          '50,724 km',
+                          'Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System.'),
                       Padding(
                         padding: EdgeInsets.only(left: 10),
                       ),
-                      planetCard('neptune'),
+                      planetCard(
+                          'neptune',
+                          Color.fromRGBO(146, 209, 251, 1),
+                          Color.fromRGBO(20, 92, 225, 1),
+                          'Solid',
+                          '49,244 km',
+                          'Neptune is the eighth and farthest known planet from the Sun in the Solar System. '),
                     ],
                   ),
                 ),
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 30, left: 40, right: 35),
+              padding: EdgeInsets.only(top: 20, left: 40, right: 35),
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 0.06,
@@ -180,43 +245,83 @@ class _MyHomePageState extends State<MyHomePage> {
                       Padding(
                         padding: EdgeInsets.only(left: 25),
                       ),
-                      planetCardSmall('jupiter'),
+                      planetCardSmall(
+                        'jupiter',
+                        Color.fromRGBO(218, 81, 7, 1),
+                        Color.fromRGBO(233, 153, 69, 1),
+                      ),
                       Padding(
                         padding: EdgeInsets.only(left: 15),
                       ),
-                      planetCardSmall('venus'),
+                      planetCardSmall(
+                        'venus',
+                        Color.fromRGBO(180, 101, 39, 1),
+                        Color.fromRGBO(233, 202, 115, 1),
+                      ),
                       Padding(
                         padding: EdgeInsets.only(left: 15),
                       ),
-                      planetCardSmall('earth'),
+                      planetCardSmall(
+                        'earth',
+                        Color.fromRGBO(0, 129, 186, 1),
+                        Color.fromRGBO(0, 209, 230, 1),
+                      ),
                       Padding(
                         padding: EdgeInsets.only(left: 15),
                       ),
-                      planetCardSmall('mercury'),
+                      planetCardSmall(
+                        'mercury',
+                        Color.fromRGBO(184, 117, 79, 1),
+                        Color.fromRGBO(223, 181, 147, 1),
+                      ),
                       Padding(
                         padding: EdgeInsets.only(left: 15),
                       ),
-                      planetCardSmall('saturn'),
+                      planetCardSmall(
+                        'saturn',
+                        Color.fromRGBO(155, 63, 60, 1),
+                        Color.fromRGBO(199, 109, 104, 1),
+                      ),
                       Padding(
                         padding: EdgeInsets.only(left: 15),
                       ),
-                      planetCardSmall('uranus'),
+                      planetCardSmall(
+                        'uranus',
+                        Color.fromRGBO(20, 71, 158, 1),
+                        Color.fromRGBO(28, 178, 240, 1),
+                      ),
                       Padding(
                         padding: EdgeInsets.only(left: 15),
                       ),
-                      planetCardSmall('mars'),
+                      planetCardSmall(
+                        'mars',
+                        Color.fromRGBO(159, 0, 0, 1),
+                        Color.fromRGBO(251, 98, 82, 1),
+                      ),
                       Padding(
                         padding: EdgeInsets.only(left: 15),
                       ),
-                      planetCardSmall('sun'),
+                      planetCardSmall(
+                        'sun',
+                        Color.fromRGBO(229, 107, 20, 1),
+                        Color.fromRGBO(239, 178, 92, 1),
+                      ),
                       Padding(
                         padding: EdgeInsets.only(left: 15),
                       ),
-                      planetCardSmall('neptune'),
+                      planetCardSmall(
+                        'neptune',
+                        Color.fromRGBO(20, 92, 225, 1),
+                        Color.fromRGBO(146, 209, 251, 1),
+                      ),
                       Padding(
                         padding: EdgeInsets.only(left: 15),
                       ),
-                      planetCardSmall('moon'),
+                      planetCardSmall(
+                        'moon',
+                        Color.fromRGBO(79, 86, 92, 1),
+                        Color.fromRGBO(220, 217, 225, 1),
+                      ),
                     ],
                   ),
                 ),
@@ -228,7 +333,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget planetCardSmall(String planetName) {
+  Widget planetCardSmall(String planetName, Color color1, Color color2) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
@@ -237,10 +342,7 @@ class _MyHomePageState extends State<MyHomePage> {
           height: 120,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [
-                Color.fromRGBO(227, 104, 115, 1),
-                Color.fromRGBO(251, 232, 193, 1),
-              ],
+              colors: [color2, color1],
               begin: Alignment.bottomCenter,
               end: Alignment.topCenter,
             ),
@@ -259,35 +361,47 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget planetCard(String planetName) {
-    return Card(
-      elevation: 0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          Radius.circular(20),
+  Widget planetCard(String planetName, Color color1, Color color2,
+      String planetType, String diameter, String description) {
+    return InkWell(
+      onTap: () => Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (BuildContext context) => PlanetDetails(
+            planetName: planetName,
+            color1: color1,
+            color2: color2,
+            planetType: planetType,
+            diameter: diameter,
+            description: description,
+          ),
         ),
       ),
-      child: Container(
-        width: MediaQuery.of(context).size.width * 0.6,
-        height: MediaQuery.of(context).size.height * 0.47,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromRGBO(251, 232, 193, 1),
-              Color.fromRGBO(227, 104, 115, 1),
-            ],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-          ),
+      child: Card(
+        elevation: 0,
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(20),
           ),
-          color: Colors.red,
         ),
-        child: Hero(
-          tag: planetName,
-          child: Image.asset(
-            'assets/images/$planetName.png',
+        child: Container(
+          width: MediaQuery.of(context).size.width * 0.6,
+          height: MediaQuery.of(context).size.height * 0.47,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [color1, color2],
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+            ),
+            borderRadius: BorderRadius.all(
+              Radius.circular(20),
+            ),
+            color: Colors.red,
+          ),
+          child: Hero(
+            tag: planetName,
+            child: Image.asset(
+              'assets/images/$planetName.png',
+            ),
           ),
         ),
       ),

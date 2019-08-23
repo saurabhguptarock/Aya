@@ -31,6 +31,8 @@ flutter:
     - assets/images/saturn.png
     - assets/images/uranus.png
     - assets/images/neptune.png
+    - assets/images/diameter.png
+    - assets/images/planetType.png
 
   fonts:
     - family: WorkSansMedium
